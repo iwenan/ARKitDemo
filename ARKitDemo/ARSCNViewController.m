@@ -2,7 +2,7 @@
 //  ARSCNViewController.m
 //  ARKitDemo
 //
-//  Created by iwenan on 2017/8/21.
+//  Created by iwenan on 2017/8/23.
 //  Copyright © 2017年 iwenan. All rights reserved.
 //
 
@@ -93,7 +93,7 @@
     self.rotatePlaneNode = nil;
     self.flowerNode = nil;
     _isGround = NO;
-        
+    
     // 使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建）
     SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/ship.scn"];
     // 获取飞机节点（一个场景会有多个节点，飞机节点则默认是场景子节点的第一个）
@@ -186,42 +186,42 @@
         flowerNode.position = SCNVector3Make(groundAnchor.center.x, 0, groundAnchor.center.z);
         [node addChildNode:flowerNode];
         
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/cup/cup.scn"];
-            SCNNode *vaseNode = scene.rootNode.childNodes[0];
-            
-            // 设置花瓶节点的位置为捕捉到的平地的位置，如果不设置，则默认为原点位置，也就是相机位置
-            vaseNode.position = SCNVector3Make(groundAnchor.center.x, 0, groundAnchor.center.z);
-            self.flowerNode = vaseNode;
-
-            // 将花瓶节点添加到当前屏幕中
-            //!!!此处一定要注意：花瓶节点是添加到代理捕捉到的节点中，而不是AR视图的根节点。因为捕捉到的平地锚点是一个本地坐标系，而不是世界坐标系
-            [node addChildNode:vaseNode];
-//        });
+        //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/cup/cup.scn"];
+        SCNNode *vaseNode = scene.rootNode.childNodes[0];
+        
+        // 设置花瓶节点的位置为捕捉到的平地的位置，如果不设置，则默认为原点位置，也就是相机位置
+        vaseNode.position = SCNVector3Make(groundAnchor.center.x, 0, groundAnchor.center.z);
+        self.flowerNode = vaseNode;
+        
+        // 将花瓶节点添加到当前屏幕中
+        //!!!此处一定要注意：花瓶节点是添加到代理捕捉到的节点中，而不是AR视图的根节点。因为捕捉到的平地锚点是一个本地坐标系，而不是世界坐标系
+        [node addChildNode:vaseNode];
+        //        });
     }
 }
 
 // 刷新时调用
 - (void)renderer:(id <SCNSceneRenderer>)renderer willUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
-//    NSLog(@"刷新中");
+    //    NSLog(@"刷新中");
 }
 
 // 更新节点时调用
 - (void)renderer:(id <SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
-//    NSLog(@"节点更新");
+    //    NSLog(@"节点更新");
     
 }
 
 // 移除节点时调用
 - (void)renderer:(id <SCNSceneRenderer>)renderer didRemoveNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
-//    NSLog(@"节点移除");
+    //    NSLog(@"节点移除");
 }
 
 #pragma mark - ARSessionDelegate
 
 //会话位置更新（监听相机的移动），此代理方法会调用非常频繁，只要相机移动就会调用，如果相机移动过快，会有一定的误差
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame {
-//    NSLog(@"相机移动");
+    //    NSLog(@"相机移动");
     //移动飞机
     if (self.planeNode) {
         //捕捉相机的位置，让节点随着相机移动而移动
@@ -231,16 +231,16 @@
 }
 
 - (void)session:(ARSession *)session didAddAnchors:(NSArray<ARAnchor*>*)anchors {
-//    NSLog(@"添加锚点");
+    //    NSLog(@"添加锚点");
 }
 
 
 - (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor*>*)anchors {
-//    NSLog(@"刷新锚点");
+    //    NSLog(@"刷新锚点");
 }
 
 - (void)session:(ARSession *)session didRemoveAnchors:(NSArray<ARAnchor*>*)anchors {
-//    NSLog(@"移除锚点");
+    //    NSLog(@"移除锚点");
 }
 
 #pragma mark - Getter
@@ -324,3 +324,4 @@
 }
 
 @end
+
