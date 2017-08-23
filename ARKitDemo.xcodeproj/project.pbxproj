@@ -14,6 +14,7 @@
 		B4881F5B1F4ADE9300F04719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4881F591F4ADE9300F04719 /* LaunchScreen.storyboard */; };
 		B4881F5E1F4ADE9300F04719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4881F5D1F4ADE9300F04719 /* main.m */; };
 		B4C600231F4D281E00FBD9B6 /* ARSCNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C600221F4D281E00FBD9B6 /* ARSCNViewController.m */; };
+		B4C600251F4D29D000FBD9B6 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C600241F4D285E00FBD9B6 /* Models.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4881F5B1F4ADE9300F04719 /* LaunchScreen.storyboard in Resources */,
+				B4C600251F4D29D000FBD9B6 /* Models.scnassets in Resources */,
 				B4881F581F4ADE9300F04719 /* Assets.xcassets in Resources */,
 				B4881F561F4ADE9300F04719 /* Main.storyboard in Resources */,
 			);
@@ -285,9 +287,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6PN39WXB3R;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = none.ARKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.taqu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,9 +300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6PN39WXB3R;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = none.ARKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.taqu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
